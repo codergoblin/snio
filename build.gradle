@@ -1,6 +1,23 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+
+dependencies {}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 group 'codergoblin'
 version '1.0-SNAPSHOT'
